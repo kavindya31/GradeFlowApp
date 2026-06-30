@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F8">
+
+    <!-- COMMON TOP BAR -->
+    <include layout="@layout/common_top_bar" />
+
+    <!-- CHAT SCROLL AREA -->
+
+    <!-- ===== INPUT BAR ===== -->
+    <ScrollView
+        android:id="@+id/chatScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/chatContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- TODAY divider -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/today_pill_bg"
+                android:letterSpacing="0.1"
+                android:paddingStart="18dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="7dp"
+                android:text="TODAY"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- ===== AI MESSAGE 1 ===== -->
+            <LinearLayout
+                android:id="@+id/etMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <!-- AI avatar — purple circle with sparkle -->
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/ai_avatar_bg"
+                    android:gravity="center"
+                    android:text="✦"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <!-- Bubble + timestamp -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="2dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingMultiplier="1.4"
+                            android:padding="16dp"
+                            android:text="Hello! I'm your GradeFlow AI assistant. I've analyzed your recent performance in Advanced Thermodynamics. Would you like to review the concepts that caused the dip in your last two quizzes?"
+                            android:textColor="#111111"
+                            android:textSize="15sp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:letterSpacing="0.04"
+                        android:text="GRADEFLOW AI • 10:30 AM"
+                        android:textColor="#AAAAAA"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <!-- Spacer to prevent stretching full width -->
+                <Space
+                    android:layout_width="44dp"
+                    android:layout_height="1dp" />
+
+            </LinearLayout>
+
+            <!-- ===== USER MESSAGE ===== -->
+
+            <!-- ===== AI MESSAGE 2 ===== -->
+            <LinearLayout
+                android:id="@+id/etMessage2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <!-- AI avatar -->
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/ai_avatar_bg"
+                    android:gravity="center"
+                    android:text="✦"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="14dp"
+                                android:lineSpacingMultiplier="1.4"
+                                android:text="Based on your current trajectory:"
+                                android:textColor="#111111"
+                                android:textSize="15sp" />
+
+                            <!-- Target Midterm Score row -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:gravity="top"
+                                android:orientation="horizontal">
+
+                                <!-- Spacer left -->
+                                <Space
+                                    android:layout_width="44dp"
+                                    android:layout_height="1dp" />
+
+                                <!-- Bubble + timestamp -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:cardBackgroundColor="#1A4FCC"
+                                        app:cardCornerRadius="18dp"
+                                        app:cardElevation="2dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:lineSpacingMultiplier="1.4"
+                                            android:padding="16dp"
+                                            android:text="Yes, please. Can you also tell me how much I need to score on the midterm to stay on track for my 3.8 GPA goal?"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="15sp" />
+
+                                    </androidx.cardview.widget.CardView>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_marginTop="6dp"
+                                        android:letterSpacing="0.04"
+                                        android:text="YOU • 10:31 AM"
+                                        android:textColor="#AAAAAA"
+                                        android:textSize="11sp" />
+
+                                </LinearLayout>
+
+                                <!-- User avatar -->
+                                <TextView
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="2dp"
+                                    android:background="@drawable/user_avatar_bg"
+                                    android:gravity="center"
+                                    android:text="👤"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/check_green_circle"
+                                    android:gravity="center"
+                                    android:text="✓"
+                                    android:textColor="#2E7D32"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Target Midterm Score: "
+                                    android:textColor="#333333"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="92%"
+                                    android:textColor="#0038B8"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <!-- Focus Area row -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="14dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/book_purple_circle"
+                                    android:gravity="center"
+                                    android:text="📖"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Focus Area: "
+                                    android:textColor="#333333"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Heat Transfer"
+                                    android:textColor="#111111"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:lineSpacingMultiplier="1.4"
+                                android:text="Should we start a quick 15-"
+                                android:textColor="#111111"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="44dp"
+                    android:layout_height="1dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/inputBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Text input field -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="Ask GradeFlow AI..."
+            android:textColorHint="#BBBBBB"
+            android:textSize="15sp"
+            android:textColor="#111111"
+            android:background="@drawable/input_field_bg"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:inputType="text"
+            android:imeOptions="actionSend"
+            android:maxLines="1"/>
+
+        <!-- Send button -->
+        <TextView
+        android:id="@+id/btnSend"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="▶"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:background="@drawable/send_btn_bg"
+            android:layout_marginStart="10dp"/>
+
+        <!-- Mic button -->
+        <TextView
+            android:id="@+id/btnMic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="🎤"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="@drawable/mic_btn_bg"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
+    <!-- COMMON BOTTOM NAV -->
+    <include layout="@layout/common_bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

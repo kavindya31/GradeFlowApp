@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/planner"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Planner"/>
+
+    <item
+        android:id="@+id/calculator"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Calculator"/>
+
+    <item
+        android:id="@+id/ai"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="AI"/>
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Profile"/>
+
+</menu>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnSaveChanges" type="id" />
+    <item name="tvCancel" type="id" />
+    <item name="tvEditGPA" type="id" />
+    <item name="cardGPA" type="id" />
+    <item name="cardYear" type="id" />
+    <item name="etDegree" type="id" />
+    <item name="tvChangePhoto" type="id" />
+    <item name="btnCameraOverlay" type="id" />
+    <item name="imgEditAvatar" type="id" />
+    <item name="btnBack" type="id" />
+</resources>

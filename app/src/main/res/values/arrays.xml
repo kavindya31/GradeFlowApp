@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="date_range_options">
+        <item>Today</item>
+        <item>This Week</item>
+        <item>This Month</item>
+        <item>All Time</item>
+    </string-array>
+
+    <string-array name="status_type_options">
+        <item>Upcoming</item>
+        <item>Missed</item>
+        <item>Completed</item>
+        <item>Cancelled</item>
+    </string-array>
+</resources>
